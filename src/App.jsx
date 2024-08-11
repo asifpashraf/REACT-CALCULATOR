@@ -5,6 +5,7 @@ import './App.css'
 import Button from './button.jsx'
 
 function App() {
+  const btnValues =["1","2","3","4","5","6","7","8","9","0",".","00","+","-","*","/"]
 
   return (
     <>
@@ -12,9 +13,12 @@ function App() {
         <h1>calculator</h1>
         <div className="cal-body">
           <div className='inputBox'>
-            <input type="text" id="display" />
+            <input type="text" id="display" readOnly/>
           </div>
-          <Button name="its great outside"/>
+          {btnValues.map((value) => (
+            <Button text={value}/>
+          ))}
+          
         </div>
       </div>
     </>
